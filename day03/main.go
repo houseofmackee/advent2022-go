@@ -58,8 +58,7 @@ func main() {
 
 	sumOfItemValues = 0
 	for i := 0; i < len(lines); i += 3 {
-		tempIntersection := stringIntersection(lines[i], lines[i+1])
-		itemValue := int(stringIntersection(lines[i+2], tempIntersection)[0])
+		itemValue := int(stringIntersection(lines[i], stringIntersection(lines[i+1], lines[i+2]))[0])
 		if itemValue >= 97 {
 			sumOfItemValues += itemValue - 96
 		} else {
